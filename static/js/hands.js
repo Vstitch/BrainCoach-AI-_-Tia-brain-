@@ -165,12 +165,12 @@ let hands, camera;
 
 try {
     hands = new Hands({
-        locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/${file}`
+        locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
     });
 
     hands.setOptions({
         maxNumHands: 1,
-        modelComplexity: 0, // Lowered from 1 to 0 for faster tracking performance
+        modelComplexity: 1, // Reset to 1 to match working student_training configuration
         minDetectionConfidence: 0.5, // Lowered from 0.7 for faster detection
         minTrackingConfidence: 0.5 // Lowered from 0.7 to maintain tracking easier
     });
